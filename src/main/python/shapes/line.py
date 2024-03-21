@@ -136,11 +136,14 @@ class Grabber(QGraphicsPathItem):
 
 class LineLabel(QGraphicsTextItem):
     nameChanged = pyqtSignal()
+    labelNumber = -1
     
     def __init__(self, pos, parent=None):
         super(LineLabel, self).__init__()
+        # increment of static variable
+        LineLabel.labelNumber += 1
         # initial text
-        self.setPlainText("abc")
+        self.setPlainText(f"Label {LineLabel.labelNumber}")
         # stores index of first point of segment
         self.index = None
         # distance from line segment
