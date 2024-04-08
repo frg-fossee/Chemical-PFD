@@ -142,6 +142,7 @@ class LineLabel(QGraphicsTextItem):
         super(LineLabel, self).__init__()
         # increment of static variable
         LineLabel.labelNumber += 1
+        self.setDefaultTextColor(Qt.black)
         # initial text
         self.setPlainText(f"Label {LineLabel.labelNumber}")
         # stores index of first point of segment
